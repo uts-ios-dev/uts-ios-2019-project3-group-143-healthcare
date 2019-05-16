@@ -81,6 +81,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A4EA0E0A228D955700328979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4EA0E0B228D957400328979 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4EA0E0C228D959E00328979 /* Main */,
+				FD893C162289C54C00C059CD /* Doctors */,
+				FD893C152289C53D00C059CD /* Patients */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4EA0E0C228D959E00328979 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD893BEF2289835200C059CD /* MainViewController.swift */,
+				FD893C032289C32700C059CD /* LoginViewController.swift */,
+				FD893C012289C31500C059CD /* RegistrationViewController.swift */,
+				FD893C092289C35800C059CD /* EditProfileViewController.swift */,
+				FD893C182289C89800C059CD /* ResetPasswordViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		FD893BE12289835200C059CD = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +131,9 @@
 		FD893BEC2289835200C059CD /* HealthCare */ = {
 			isa = PBXGroup;
 			children = (
+				A4EA0E0B228D957400328979 /* Controller */,
+				A4EA0E0A228D955700328979 /* Model */,
 				FD893C172289C56C00C059CD /* View */,
-				FD893C162289C54C00C059CD /* Doctors */,
-				FD893C152289C53D00C059CD /* Patients */,
 				FD893BED2289835200C059CD /* AppDelegate.swift */,
 				FD893BFF228983BE00C059CD /* GoogleService-Info.plist */,
 				FD893BF42289835600C059CD /* Assets.xcassets */,
@@ -116,16 +145,11 @@
 		FD893C152289C53D00C059CD /* Patients */ = {
 			isa = PBXGroup;
 			children = (
-				FD893C182289C89800C059CD /* ResetPasswordViewController.swift */,
-				FD893BEF2289835200C059CD /* MainViewController.swift */,
 				FD893C0F2289C38D00C059CD /* CancelAppointmentViewController.swift */,
 				FD893C0D2289C37C00C059CD /* HistoryViewController.swift */,
 				FD893C0B2289C36900C059CD /* HealthStatusViewController.swift */,
-				FD893C092289C35800C059CD /* EditProfileViewController.swift */,
 				FD893C072289C34B00C059CD /* HomeViewController.swift */,
 				FD893C052289C33700C059CD /* BookAppointmentViewController.swift */,
-				FD893C032289C32700C059CD /* LoginViewController.swift */,
-				FD893C012289C31500C059CD /* RegistrationViewController.swift */,
 			);
 			path = Patients;
 			sourceTree = "<group>";
