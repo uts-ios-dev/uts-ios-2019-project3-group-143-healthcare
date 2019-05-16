@@ -2,6 +2,19 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
+//Close the keyboard when click outside of textfield
+extension UIViewController{
+    func hideKeyboard(){
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+        
+        view.addGestureRecognizer(Tap)
+    }
+    
+    @objc func DismissKeyboard(){
+        view.endEditing(true)
+    }
+}
+
 class RegistrationViewController: UIViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -16,17 +29,13 @@ class RegistrationViewController: UIViewController ,UITextFieldDelegate{
         super.viewDidLoad()
         self.navigationItem.title = "Register"
         
+        self.hideKeyboard()
+        
     }
     
     func addUser(){
         
         
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        return true
     }
     
     @IBAction func registerPage(_ sender: UIButton) {
