@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC2A6E629C1575CE169F786F /* Pods_HealthCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4643266F5B197DF93FCEA4 /* Pods_HealthCare.framework */; };
+		C55B6CA6228EBEBC006473CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B6CA5228EBEBC006473CB /* User.swift */; };
 		FD893BEE2289835200C059CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD893BED2289835200C059CD /* AppDelegate.swift */; };
 		FD893BF02289835200C059CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD893BEF2289835200C059CD /* MainViewController.swift */; };
 		FD893BF32289835200C059CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD893BF12289835200C059CD /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		3A4643266F5B197DF93FCEA4 /* Pods_HealthCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6EFA10F41778572D49493E /* Pods-HealthCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCare.release.xcconfig"; path = "Target Support Files/Pods-HealthCare/Pods-HealthCare.release.xcconfig"; sourceTree = "<group>"; };
 		C55417B08D8199F0131D161D /* Pods-HealthCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCare.debug.xcconfig"; path = "Target Support Files/Pods-HealthCare/Pods-HealthCare.debug.xcconfig"; sourceTree = "<group>"; };
+		C55B6CA5228EBEBC006473CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FD893BEA2289835200C059CD /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD893BED2289835200C059CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD893BEF2289835200C059CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		A4EA0E0A228D955700328979 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C55B6CA5228EBEBC006473CB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				FD893C122289C50200C059CD /* DoctorHomeViewController.swift in Sources */,
 				FD893C022289C31500C059CD /* RegistrationViewController.swift in Sources */,
 				FD893C062289C33700C059CD /* BookAppointmentViewController.swift in Sources */,
+				C55B6CA6228EBEBC006473CB /* User.swift in Sources */,
 				FD893C102289C38D00C059CD /* CancelAppointmentViewController.swift in Sources */,
 				FD893BF02289835200C059CD /* MainViewController.swift in Sources */,
 				FD893BEE2289835200C059CD /* AppDelegate.swift in Sources */,

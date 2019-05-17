@@ -6,7 +6,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,8 @@ class MainViewController: UIViewController {
     func changeLayout(){
         bannerImageView.image = UIImage(named:"banner")
         logoImageView.image = UIImage(named: "logo")
-        loginButton.layer.cornerRadius = 10.0
-        loginButton.layer.masksToBounds = true
+        signupButton.layer.cornerRadius = 10.0
+        signupButton.layer.masksToBounds = true
     }
     
     func checkLoggedUser(){
@@ -30,12 +30,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func signupView(_ sender: UIButton) {
+        performSegue(withIdentifier: "registerView", sender: self)
+    }
     @IBAction func loginView(_ sender: UIButton) {
         performSegue(withIdentifier: "loginView", sender: self)
     }
     
-    @IBAction func registerView(_ sender: UIButton) {
-        performSegue(withIdentifier: "registerView", sender: self)
-    }
 }
 
