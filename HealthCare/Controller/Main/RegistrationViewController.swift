@@ -64,11 +64,9 @@ class RegistrationViewController: UIViewController ,UITextFieldDelegate{
         }
         else{
             uid = Auth.auth().currentUser!.uid
-            Database.database().reference().child("Appointment").childByAutoId().observeSingleEvent(of: .value, with: { (snapshot) in
-                print("Hahahaha\(snapshot)")
-            }, withCancel: nil)
         }
     }
+    
     //Move TextField when typing
     @objc func keyboardDidShow(notification: Notification){
         let info:NSDictionary = notification.userInfo! as NSDictionary
@@ -115,6 +113,8 @@ class RegistrationViewController: UIViewController ,UITextFieldDelegate{
         dateString = dateFormatter.string(from: dateOfBirthPicker.date)
         
     }
+    
+    
     func addUser(uid: String){
         let genderString = genderSegment.titleForSegment(at: genderSegment.selectedSegmentIndex)!
         let user = ["uid": uid, "firstName": firstNameTextField.text!, "lastName": lastNameTextField.text!, "dateOfBirth": dateString, "gender": genderString, "address": addressTextField.text!, "phone": phoneTextField.text!, "email": emailTextField.text!]

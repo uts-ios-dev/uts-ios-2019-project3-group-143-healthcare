@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User{
+class User{
     var uid: String
     var firstName: String
     var lastName: String
@@ -17,4 +17,15 @@ struct User{
     var address: String
     var phone: String
     var email: String
+    
+    init(uid:String, firstName: String, lastName:String, dateOfBirth: String, gender: String, address:String, phone:String, email:String) {
+        self.uid = uid
+        self.firstName = firstName
+        self.lastName = lastName
+        self.dateOfBirth = dateOfBirth
+        self.gender = gender
+        self.address = address
+        self.phone = phone
+        self.email = email
+    }
 }
