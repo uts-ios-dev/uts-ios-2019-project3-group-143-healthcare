@@ -5,6 +5,7 @@ import FirebaseDatabase
 class BookAppointmentViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     
+    var appointmentUser:DatabaseReference!
     var appointment:DatabaseReference!
     
     var doctors:[String] = ["Atif Gill","Sharad Ghimire","Rohit Gurung"]
@@ -12,21 +13,32 @@ class BookAppointmentViewController: UIViewController,UIPickerViewDelegate,UIPic
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var datePickered: UIDatePicker!
     @IBOutlet weak var datePicked: UILabel!
+    @IBOutlet weak var patientsName: UILabel!
+    
     var doctorname:String = ""
     var appointTime:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Book Appointment"
+        appointmentUser = Database.database().reference().child("User")
         appointment = Database.database().reference().child("Appointment")
     }
     
+    @IBAction func cancelAppointment(_ sender: UIButton) {
+        performSegue(withIdentifier: "bookAppointment", sender: self)
+    }
+    
+    func userAppointment(){
+        let userID = (Auth.auth().currentUser?.uid)!
+    self.appointmentUser.child(userID).child("AppointmentsDetails").child("DoctorName").setValue(doctorName.text)
+    self.appointmentUser.child(userID).child("AppointmentsDetails").child("Time").setValue(datePicked.text)
+    }
     func addAppointment(){
         let key = appointment.childByAutoId().key
         let appointments = ["id":key,"Appointment Time":datePicked.text,"Doctor Name":doctorName.text]
         appointment.child(key!).setValue(appointments)
+        userAppointment()
     }
-    
-    
     @IBAction func datePicker(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -53,5 +65,5 @@ class BookAppointmentViewController: UIViewController,UIPickerViewDelegate,UIPic
         doctorName.text = doctors[row]
         return doctors[row]
     }
-  
+    
 }

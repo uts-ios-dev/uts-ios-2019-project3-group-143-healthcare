@@ -4,8 +4,11 @@ import Firebase
 
 class HomeViewController: UIViewController{
 //    var appointments:[Appointments] = []
-    let red = Database.database().reference(withPath: "Appointment")
+    let appointmentData = Database.database().reference(withPath: "User")
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var patientName: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -26,21 +29,28 @@ class HomeViewController: UIViewController{
     
     
     func getAppointment(){
-       
-//        let appointmentDetails = Appointments[doctorName:]
-        
-    }
-    
-    func checkLoggedUser(){
-        if Auth.auth().currentUser?.uid == nil{
-            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+                let userID = Auth.auth().currentUser?.uid
+        appointmentData.child("User").child(userID!).child("AppointmentsDetails").observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let doctorName = value?["DoctorName"] as? String ?? ""
+            let appointmentTime = value?["Time"] as? String ?? ""
+            
+            print("\(doctorName) and \(appointmentTime)")
+        })
+        {
+            (error) in
+            print(error.localizedDescription)
         }
-        else{
-            let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("Appointment").childByAutoId().observeSingleEvent(of: .value, with: { (snapshot) in
-                print("Hahahaha\(snapshot)")
-            }, withCancel: nil)
-        }
+//        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let value = snapshot.value as? NSDictionary
+//            let username = value?["username"] as? String ?? ""
+//            let user = User(username: username)
+//
+//            // ...
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
     
     @objc func handleLogout(){
